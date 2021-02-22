@@ -97,24 +97,15 @@ jobs:
           target: ${{ matrix.target }}
           override: true
       - run: cargo build --target ${{ matrix.target }} -p ${{ matrix.crate }} --release
-  # TODO: add Dockerfile for building Nitro on CI 
-  # build-nitro:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       crate:
-  #         - tmkms-nitro-enclave
-  #       rust:
-  #         - nightly
-  #       target:
-  #         - x86_64-unknown-linux-musl
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions-rs/toolchain@v1
-  #       with:
-  #         profile: minimal
-  #         toolchain: ${{ matrix.rust }}
-  #         target: ${{ matrix.target }}
-  #         override: true
-  #     - run: cargo build --target ${{ matrix.target }} -p ${{ matrix.crate }} --release
-
+  build-nitro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build tmkms-nitro-enclave with docker
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          file: Dockerfile.nitro
+          build-args: |
+            RUST_TOOLCHAIN=1.50.0

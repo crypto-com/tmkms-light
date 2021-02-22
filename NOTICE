@@ -7,3 +7,8 @@ This project contains portions of code derived from the following libraries:
  * Copyright: Copyright (c) 2018-2021 Iqlusion Inc.
  * License: Apache License 2.0
  * Repository: https://github.com/iqlusioninc/tmkms
+
+* Dockerfile.nitro
+ * Copyright: Copyright 2020 Amazon.com, Inc.
+ * License: Apache License 2.0
+ * Repository: https://github.com/aws/aws-nitro-enclaves-acm/blob/main/env/enclave/Dockerfile
