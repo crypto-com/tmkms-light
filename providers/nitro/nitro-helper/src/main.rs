@@ -35,6 +35,8 @@ enum TmkmsLight {
     Start {
         #[structopt(short)]
         config_path: Option<PathBuf>,
+        #[structopt(long)]
+        cid: Option<u32>,
     },
 }
 
@@ -54,7 +56,7 @@ fn main() {
             aws_region,
             kms_key_id,
         ),
-        TmkmsLight::Start { config_path } => command::start(config_path),
+        TmkmsLight::Start { config_path, cid } => command::start(config_path, cid),
     };
     if let Err(e) = result {
         eprintln!("{}", e);

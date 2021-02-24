@@ -58,7 +58,7 @@ pub fn init(
 }
 
 /// push config to enclave, start up a proxy (if needed) + state syncer
-pub fn start(config_path: Option<PathBuf>) -> Result<(), String> {
+pub fn start(config_path: Option<PathBuf>, cid: Option<u32>) -> Result<(), String> {
     let cp = config_path.unwrap_or_else(|| "tmkms.toml".into());
     if !cp.exists() {
         Err("missing tmkms.toml file".to_owned())
@@ -133,7 +133,11 @@ pub fn start(config_path: Option<PathBuf>) -> Result<(), String> {
             credentials,
             aws_region: config.aws_region,
         };
-        let addr = SockAddr::new_vsock(config.enclave_config_cid, config.enclave_config_port);
+        let addr = if let Some(cid) = cid {
+            SockAddr::new_vsock(cid, config.enclave_config_port)
+        }else{
+            SockAddr::new_vsock(config.enclave_config_cid, config.enclave_config_port)
+        };
         let mut socket = vsock::VsockStream::connect(&addr).map_err(|e| {
             format!(
                 "failed to connect to the enclave to push its config: {:?}",
