@@ -2517,7 +2517,7 @@ dependencies = [
  "mz_rusoto_credential",
  "mz_rusoto_kms",
  "nix 0.17.0",
- "rand_core 0.5.1",
+ "rand_core 0.6.2",
  "secrecy",
  "serde",
  "serde_json",
@@ -2542,7 +2542,7 @@ version = "0.1.0"
 dependencies = [
  "anomaly",
  "ed25519-dalek",
- "rand_core 0.5.1",
+ "rand_core 0.6.2",
  "serde",
  "serde_json",
  "structopt",
