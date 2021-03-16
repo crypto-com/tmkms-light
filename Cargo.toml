@@ -13,7 +13,7 @@ prost = "0.6"
 serde = { version = "1", features = ["serde_derive"] }
 subtle-encoding = { version = "0.5", features = ["bech32-preview"] }
 tendermint = { version = "0.17" }
-tendermint-proto = "0.17"
+tendermint-proto = "0.18"
 tendermint-p2p = { version = "0.17" }
 thiserror = "1"
 tracing = "0.1"
