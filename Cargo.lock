@@ -2444,7 +2444,7 @@ dependencies = [
  "aes-gcm-siv",
  "anomaly",
  "ed25519-dalek",
- "rand 0.7.3",
+ "rand 0.8.3",
  "secrecy",
  "serde_json",
  "sgx-isa",
