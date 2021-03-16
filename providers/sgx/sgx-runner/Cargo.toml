@@ -10,7 +10,7 @@ ed25519 = { version = "1", features = ["serde"] }
 ed25519-dalek = "1"
 sgx-isa = "0.3"
 thiserror = "1"
-tendermint = { version = "0.17" }
+tendermint = { version = "0.18" }
 tmkms-light = { path = "../../.." }
 secrecy = { version = "0.7" }
 zeroize = "1"
