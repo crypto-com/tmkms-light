@@ -1337,6 +1337,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "nix"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa9b4819da1bc61c0ea48b63b7bc8604064dd43013e7cc325df098d49cd7c18a"
+dependencies = [
+ "bitflags",
+ "cc",
+ "cfg-if 1.0.0",
+ "libc",
+]
+
+[[package]]
 name = "ntapi"
 version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2492,7 +2504,7 @@ dependencies = [
  "anomaly",
  "aws-ne-sys",
  "ed25519-dalek",
- "nix 0.17.0",
+ "nix 0.20.0",
  "serde_json",
  "subtle",
  "tendermint",
@@ -2516,7 +2528,7 @@ dependencies = [
  "mz_rusoto_core",
  "mz_rusoto_credential",
  "mz_rusoto_kms",
- "nix 0.17.0",
+ "nix 0.20.0",
  "rand_core 0.5.1",
  "secrecy",
  "serde",
