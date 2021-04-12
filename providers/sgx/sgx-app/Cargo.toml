@@ -14,7 +14,7 @@ serde_json = "1"
 sgx-isa = { version = "0.3", features = ["sgxstd"] }
 subtle = "2"
 subtle-encoding = "0.5"
-tendermint-p2p = "0.18"
+tendermint-p2p = "0.19"
 tmkms-light-sgx-runner = { path = "../sgx-runner" }
 tmkms-light = { path = "../../.." }
 tracing = "0.1"
