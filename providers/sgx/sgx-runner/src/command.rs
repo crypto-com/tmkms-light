@@ -75,7 +75,7 @@ pub fn init(
     config::write_sealed_file(
         config.sealed_consensus_key_path,
         &sealed_key.sealed_key_data,
-    )
+    )?
     .map_err(|e| format!("failed to write consensus key: {:?}", e))?;
     let public_key =
         ed25519_dalek::PublicKey::from_bytes(&sealed_key.sealed_key_data.seal_key_request.keyid)
@@ -198,7 +198,7 @@ pub fn recover(
             Zeroizing::new(subtle_encoding::hex::encode(&*key_bytes))
         };
         let key_data = serde_json::from_str(
-            &fs::read_to_string(key_backup_data_path)
+            &fs::read_to_string(key_backup_data_path.join("consensus-key.backup"))
                 .map_err(|e| format!("failed to read backup data: {:?}", e))?,
         )
         .map_err(|e| format!("failed to parse backup data: {:?}", e))?;
