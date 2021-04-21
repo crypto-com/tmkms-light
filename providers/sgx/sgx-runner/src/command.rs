@@ -75,7 +75,7 @@ pub fn init(
     config::write_sealed_file(
         config.sealed_consensus_key_path,
         &sealed_key.sealed_key_data,
-    )?
+    )
     .map_err(|e| format!("failed to write consensus key: {:?}", e))?;
     let public_key =
         ed25519_dalek::PublicKey::from_bytes(&sealed_key.sealed_key_data.seal_key_request.keyid)
