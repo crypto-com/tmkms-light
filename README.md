@@ -70,7 +70,7 @@ Provide your chain `bech32_prefix`
 $ tmkms-light-sgx-runner init -b bech32_prefix -p "bech32"
 ```
 
-> :warning: For those who are running Azure sgx machine, one may want to run `init` command with cloud backup key.
+> :warning: For those who are running on Azure or other cloud environments, one may want to run `init` command with a cloud backup key.
 > In Azure, `CPU-affinity` isn’t guaranteed, so for SGX “sealing” (a way to encrypt the validator key that only a particular CPU can decrypt the validator key) can’t be fully relied on. Please follow `With cloud backup key`
 
 <details>
