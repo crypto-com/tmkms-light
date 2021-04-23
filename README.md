@@ -55,7 +55,8 @@ cargo build --target x86_64-fortanix-unknown-sgx -p tmkms-light-sgx-app --releas
 
 Follow [EDP instructions](https://edp.fortanix.com/docs/tasks/deployment/) for SGXS conversion and signing.
 > :warning: For SGXS conversion, change `--heap-size/--stack-size` value to `0x40000`, and `--threads 2` should be enough.
-
+> :warning: For SGXS conversion and signing, the EDP instructions are shown for the "Debug" mode. For the production mode, remove the `--debug` / `-d` flags.
+> :warning: For CPUs without the Flexible Launch Control feature (i.e. SGX v1), the enclave code needs to be signed with the RSA key previously approved by Intel in order to launch in the production mode.
 
 #### Configuration
 
