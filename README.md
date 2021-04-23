@@ -78,7 +78,7 @@ $ tmkms-light-sgx-runner init -b bech32_prefix -p "bech32"
 
 One may provide flag `-e backup_key_path` which is to encrypt and decrypt `consensus-key.backup` in directory specified in `-k backup_data_path`
 
-One may also want to use [Azure Key Vault secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python) to store your backup key.
+One may also want to use [Azure Key Vault secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python) or its equivalents to store your backup key.
 
 > :warning: After storing your backup key in Azure Key Vault or its equivalents, make sure to delete the backup key from any local environments to prevent its potential leakage.
 > :warning: The instructions do not cover the adequate secure policy setup in Azure Key Vault or its equivalents, so make sure the policy restricts the backup key access only to particular instances during a recovery process.
