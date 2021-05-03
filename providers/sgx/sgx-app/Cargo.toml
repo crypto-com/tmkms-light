@@ -5,7 +5,7 @@ authors = ["Tomas Tauber <2410580+tomtau@users.noreply.github.com>", "Linfeng Yu
 edition = "2018"
 
 [target.'cfg(target_env = "sgx")'.dependencies]
-aes-gcm-siv = "0.9"
+aes-gcm-siv = "0.10"
 anomaly = "0.2"
 ed25519-dalek = "1"
 rand = "0.7"
