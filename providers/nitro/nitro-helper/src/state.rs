@@ -1,6 +1,5 @@
 use crate::shared::VSOCK_HOST_CID;
 use anomaly::{fail, format_err};
-use nix::sys::socket::SockAddr;
 use std::os::unix::io::AsRawFd;
 use std::thread;
 use std::{
@@ -12,7 +11,7 @@ use tempfile::NamedTempFile;
 use tmkms_light::chain::state::{consensus, StateError, StateErrorKind};
 use tmkms_light::utils::{read_u16_payload, write_u16_payload};
 use tracing::{debug, info, warn};
-use vsock::{VsockListener, VsockStream};
+use vsock::{SockAddr, VsockListener, VsockStream};
 
 /// helps the enclave to load the state previously persisted on the host
 /// + to persist new states

@@ -1,8 +1,7 @@
-use nix::sys::socket::SockAddr;
 use tracing::{error, info, warn};
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::{fmt, EnvFilter};
-use vsock::VsockListener;
+use vsock::{SockAddr, VsockListener};
 
 use tmkms_nitro_helper::tracing_layer::Layer;
 use tmkms_nitro_helper::VSOCK_HOST_CID;

@@ -1,6 +1,5 @@
 use crate::shared::VSOCK_HOST_CID;
 use nix::sys::select::{select, FdSet};
-use nix::sys::socket::SockAddr;
 use std::io::Read;
 use std::io::Write;
 use std::os::unix::io::AsRawFd;
@@ -9,7 +8,7 @@ use std::path::PathBuf;
 use std::thread;
 use std::time::Duration;
 use tracing::{error, info, trace};
-use vsock::VsockListener;
+use vsock::{SockAddr, VsockListener};
 
 /// Configuration parameters for port listening and remote destination
 pub struct Proxy {

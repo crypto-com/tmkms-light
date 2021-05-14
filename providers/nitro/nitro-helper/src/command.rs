@@ -4,7 +4,6 @@ use crate::key_utils::generate_key;
 use crate::proxy::Proxy;
 use crate::shared::{AwsCredentials, NitroConfig};
 use crate::state::StateSyncer;
-use nix::sys::socket::SockAddr;
 use rusoto_credential::{InstanceMetadataProvider, ProvideAwsCredentials};
 use std::{fs, path::PathBuf};
 use sysinfo::{ProcessExt, SystemExt};
@@ -13,6 +12,7 @@ use tmkms_light::utils::write_u16_payload;
 use tmkms_light::utils::{print_pubkey, PubkeyDisplay};
 use tracing::{debug, Level};
 use tracing_subscriber::FmtSubscriber;
+use vsock::SockAddr;
 
 /// write tmkms.toml + generate keys
 pub fn init(

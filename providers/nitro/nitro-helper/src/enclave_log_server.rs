@@ -1,6 +1,5 @@
 use crate::shared::VSOCK_HOST_CID;
 use chrono::offset::Local;
-use nix::sys::socket::SockAddr;
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
 use std::path::PathBuf;
@@ -9,7 +8,7 @@ use std::time::Duration;
 use tmkms_nitro_helper::tracing_layer::Log;
 use tracing::Level;
 use tracing::{debug, error, info, trace, warn};
-use vsock::VsockListener;
+use vsock::{SockAddr, VsockListener};
 
 /// Configuration parameters for port listening and remote destination
 pub struct LogServer {

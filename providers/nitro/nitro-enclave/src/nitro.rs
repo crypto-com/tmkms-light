@@ -3,7 +3,6 @@ mod state;
 
 use anomaly::format_err;
 use ed25519_dalek as ed25519;
-use nix::sys::socket::SockAddr;
 use std::io;
 use std::os::unix::io::AsRawFd;
 use std::thread;
@@ -21,7 +20,7 @@ use tmkms_light::error::{
 use tmkms_light::utils::read_u16_payload;
 use tmkms_nitro_helper::{NitroConfig, VSOCK_HOST_CID};
 use tracing::{error, info, trace, warn};
-use vsock::VsockStream;
+use vsock::{SockAddr, VsockStream};
 use zeroize::Zeroizing;
 
 fn get_secret_connection(

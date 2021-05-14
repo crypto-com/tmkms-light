@@ -1,12 +1,11 @@
 use anomaly::format_err;
-use nix::sys::socket::SockAddr;
 use std::io;
 use std::os::unix::io::AsRawFd;
 use tmkms_light::chain::state::{consensus, PersistStateSync, State, StateError, StateErrorKind};
 use tmkms_light::utils::{read_u16_payload, write_u16_payload};
 use tmkms_nitro_helper::VSOCK_HOST_CID;
 use tracing::{debug, trace};
-use vsock::VsockStream;
+use vsock::{SockAddr, VsockStream};
 
 /// as the state needs to be persisted outside of NE,
 /// this is a helper that communicates with the host to load the latest state

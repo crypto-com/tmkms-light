@@ -1,7 +1,6 @@
 //! Copyright (c) 2019 Tokio Contributors (licensed under the MIT License)
 //! Modifications Copyright (c) 2021, Foris Limited (licensed under the Apache License, Version 2.0)
 
-use nix::sys::socket::SockAddr;
 use std::collections::HashMap;
 use std::{fmt, io::Write};
 use tracing_core::{
@@ -11,7 +10,7 @@ use tracing_core::{
     Field, Level, Metadata, Subscriber,
 };
 use tracing_subscriber::{layer::Context, registry::LookupSpan};
-use vsock::VsockStream;
+use vsock::{SockAddr, VsockStream};
 
 pub struct Layer {
     cid: u32,
@@ -30,7 +29,7 @@ impl Layer {
 
     pub fn get_socket(&self) -> Result<VsockStream, String> {
         let addr = SockAddr::new_vsock(self.cid, self.local_port);
-        vsock::VsockStream::connect(&addr).map_err(|e| {
+        VsockStream::connect(&addr).map_err(|e| {
             format!(
                 "failed to connect to the enclave server to push log: {:?}",
                 e
