@@ -2883,9 +2883,9 @@ checksum = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
 
 [[package]]
 name = "vsock"
-version = "0.2.3"
+version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50e2ef09834e1d203d24556512c0e58e66de203440bd9d74c30a33f7240091c6"
+checksum = "c932be691560e8f3f7b2be5a47df1b8f45387e1d1df40d45b2e62284b9e9150e"
 dependencies = [
  "libc",
  "nix 0.19.1",
