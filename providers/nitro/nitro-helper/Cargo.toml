@@ -24,7 +24,7 @@ serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"
 structopt = "0.3"
 subtle-encoding = { version = "0.5", features = [ "bech32-preview" ] }
-sysinfo = { version = "0.17", optional = true }
+sysinfo = { version = "0.18", optional = true }
 tempfile = "3"
 tendermint = { version = "0.19" }
 thiserror = "1"
