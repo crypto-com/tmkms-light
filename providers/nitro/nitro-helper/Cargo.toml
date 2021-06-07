@@ -17,7 +17,7 @@ ed25519-dalek = "1"
 mz_rusoto_credential = { version = "0.46", optional = true }
 mz_rusoto_kms = { version = "0.46", optional = true }
 mz_rusoto_core = { version = "0.46", optional = true }
-nix = "0.20"
+nix = "0.21"
 rand_core = { version = "0.6", features = [ "std" ] }
 serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"

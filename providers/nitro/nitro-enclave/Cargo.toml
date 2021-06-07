@@ -8,7 +8,7 @@ edition = "2018"
 anomaly = "0.2"
 aws-ne-sys = "0.3"
 ed25519-dalek = "1"
-nix = "0.20"
+nix = "0.21"
 serde_json = "1"
 subtle = "2"
 tendermint = { version = "0.19" }
