@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 anomaly = "0.2"
-aws-ne-sys = "0.3"
+aws-ne-sys = "0.4"
 ed25519-dalek = "1"
 nix = "0.21"
 serde_json = "1"
