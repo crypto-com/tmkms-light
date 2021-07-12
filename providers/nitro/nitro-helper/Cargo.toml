@@ -15,7 +15,7 @@ ctrlc = "3"
 chrono = "0.4"
 ed25519 = { version = "1", features = [ "serde" ] }
 ed25519-dalek = "1"
-nix = "0.21"
+nix = "0.22"
 rand_core = { version = "0.6", features = [ "std" ] }
 reqwest = { version = "0.11", features = ["blocking", "json"], optional = true}
 secrecy = { version = "0.7", features = ["alloc", "serde"] }
