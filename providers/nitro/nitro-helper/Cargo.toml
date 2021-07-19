@@ -18,7 +18,7 @@ ed25519-dalek = "1"
 nix = "0.22"
 rand_core = { version = "0.6", features = [ "std" ] }
 reqwest = { version = "0.11", features = ["blocking", "json"], optional = true}
-secrecy = { version = "0.7", features = ["alloc", "serde"] }
+secrecy = { version = "0.8", features = ["alloc", "serde"] }
 serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"
 structopt = "0.3"
